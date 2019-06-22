@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 
 class SearchBar extends React.Component {
   state = { term: "" };
@@ -15,11 +14,14 @@ class SearchBar extends React.Component {
       <div className="search-bar ui segment">
         <form onSubmit={this.onFormSubmit} className="ui form">
           <div className="field">
-            <label>Search video</label>
+            <label for="input">Search video</label>
             <input
+              id="input"
               type="text"
               value={this.state.term}
-              onChange={this.inputChange}
+              onChange={e => {
+                this.setState({ term: e.target.value });
+              }}
             />
           </div>
         </form>
