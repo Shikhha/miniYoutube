@@ -1,5 +1,4 @@
 import React from "react";
-import { placeholder } from "@babel/types";
 
 class SearchBar extends React.Component {
   state = { term: "" };
